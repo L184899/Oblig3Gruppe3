@@ -1,5 +1,6 @@
 package main;
 
+import entity.Ansatt;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -20,11 +21,17 @@ public class Main {
 
             em = emf.createEntityManager();
 
-            Object result = em.createNativeQuery("select 1").getSingleResult();
-            System.out.println("Tilkobling OK! Database svarte: " + result);
+            Ansatt ansatt = em.find(Ansatt.class, 1);
+
+            if (ansatt != null) {
+                System.out.println("Fant ansatt:");
+                System.out.println(ansatt);
+            } else {
+                System.out.println("Fant ingen ansatt med id 1.");
+            }
 
         } catch (Exception e) {
-            System.out.println("Klarte ikke å koble til databasen.");
+            System.out.println("Klarte ikke å hente ansatt.");
             e.printStackTrace();
         } finally {
             if (em != null) em.close();
