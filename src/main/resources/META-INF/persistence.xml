@@ -11,11 +11,11 @@
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5433/lajoh7506"/>
-            <property name="jakarta.persistence.jdbc.user" value="lajoh7506"/>
-
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5433/yelah2703"/>
+            <property name="jakarta.persistence.jdbc.user" value="yelah2703"/>
             <property name="eclipselink.logging.level" value="WARNING"/>
         </properties>
+        
     </persistence-unit>
 
 </persistence>
