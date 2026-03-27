@@ -8,6 +8,9 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
         <class>entity.Ansatt</class>
+        <class>entity.Avdeling</class>
+        <class>entity.Deltakelse</class>
+        <class>entity.Prosjekt</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
@@ -15,7 +18,7 @@
             <property name="jakarta.persistence.jdbc.user" value="yelah2703"/>
             <property name="eclipselink.logging.level" value="WARNING"/>
         </properties>
-        
+
     </persistence-unit>
 
 </persistence>
