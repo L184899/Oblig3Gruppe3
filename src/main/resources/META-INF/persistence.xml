@@ -18,6 +18,7 @@
             <property name="jakarta.persistence.jdbc.user" value="yelah2703"/>
 
             <property name="eclipselink.logging.level" value="WARNING"/>
+            <property name="hibernate.default_schema" value="public"/>
         </properties>
 
     </persistence-unit>

@@ -3,6 +3,7 @@ package entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "deltakelse")
 public class Deltakelse {
 
     @Id

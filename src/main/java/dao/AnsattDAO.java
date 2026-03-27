@@ -25,15 +25,4 @@ public class AnsattDAO {
         em.close();
         return liste;
     }
-
-    public void oppdaterLonn(int id, double nyLonn) {
-        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-
-        em.getTransaction().begin();
-        Ansatt a = em.find(Ansatt.class, id);
-        a.setMaanedslonn(nyLonn);
-        em.getTransaction().commit();
-
-        em.close();
-    }
 }

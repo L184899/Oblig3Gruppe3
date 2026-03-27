@@ -10,6 +10,13 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        EntityManager em = JPAUtil.getEntityManager();
+
+        List<?> result =
+                em.createNativeQuery("SELECT * FROM ansatt").getResultList();
+
+        System.out.println(result.size());
+
         AnsattDAO dao = new AnsattDAO();
 
         // TEST 1
@@ -23,11 +30,7 @@ public class Main {
         for (Ansatt ans : liste) {
             System.out.println(ans);
         }
-
-        // TEST 3
-        dao.oppdaterLonn(1, 70000);
-
-        System.out.println("\nOppdatert lønn!");
     }
+
 
 }

@@ -1,10 +1,12 @@
 package entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "ansatt")
 public class Ansatt {
 
     @Id
@@ -18,8 +20,9 @@ public class Ansatt {
     private String etternavn;
     private String stilling;
 
-    private LocalDate ansettelse_dato;
-    private Double maanedslonn;
+    @Column(name = "ansettelsesdato")
+    private LocalDate ansettelsesdato;
+    private BigDecimal maanedslonn;
 
     @ManyToOne
     @JoinColumn(name = "avdeling_id", nullable = false)
@@ -33,12 +36,12 @@ public class Ansatt {
     }
 
     public Ansatt(int ansatt_id, String brukernavn, String fornavn, String etternavn,
-                  LocalDate ansettelse_dato, String stilling, double maanedslonn) {
+                  LocalDate ansettelsesdato, String stilling, BigDecimal maanedslonn) {
         this.ansatt_id = ansatt_id;
         this.brukernavn = brukernavn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
-        this.ansettelse_dato = ansettelse_dato;
+        this.ansettelsesdato = ansettelsesdato;
         this.stilling = stilling;
         this.maanedslonn = maanedslonn;
     }
@@ -76,11 +79,11 @@ public class Ansatt {
     }
 
     public LocalDate getAnsettelsesdato() {
-        return ansettelse_dato;
+        return ansettelsesdato;
     }
 
     public void setAnsettelsesdato(LocalDate ansettelsesdato) {
-        this.ansettelse_dato = ansettelsesdato;
+        this.ansettelsesdato = ansettelsesdato;
     }
 
     public String getStilling() {
@@ -91,11 +94,7 @@ public class Ansatt {
         this.stilling = stilling;
     }
 
-    public double getMaanedslonn() {
-        return maanedslonn;
-    }
-
-    public void setMaanedslonn(double maanedslonn) {
+    public void setMaanedslonn(BigDecimal maanedslonn) {
         this.maanedslonn = maanedslonn;
     }
 
@@ -106,7 +105,7 @@ public class Ansatt {
                 ", brukernavn='" + brukernavn + '\'' +
                 ", fornavn='" + fornavn + '\'' +
                 ", etternavn='" + etternavn + '\'' +
-                ", ansettelsesdato=" + ansettelse_dato +
+                ", ansettelsesdato=" + ansettelsesdato +
                 ", stilling='" + stilling + '\'' +
                 ", maanedslonn=" + maanedslonn +
                 '}';
