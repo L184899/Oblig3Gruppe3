@@ -50,13 +50,18 @@ public class Main {
             System.out.println(avd);
         }
 
+        System.out.println("\nSjef i avdeling 1:");
+        System.out.println(avdelingDAO.finnSjef(1));
+
         // prosjekt test
         System.out.println("\nAlle prosjekter:");
         List<Prosjekt> prosjekter = prosjektDAO.finnAlle();
-
         for (Prosjekt p : prosjekter) {
             System.out.println(p);
         }
+
+        System.out.println("\nAntall deltakere i prosjekt 1:");
+        System.out.println(prosjektDAO.tellDeltakelser(1));
 
         // deltakelser test
         System.out.println("\nAlle deltakelser:");
@@ -64,6 +69,9 @@ public class Main {
         for (Deltakelse d : deltakelser) {
             System.out.println(d);
         }
+
+        System.out.println("\nTotale timer i prosjekt 1:");
+        System.out.println(deltakelseDAO.totalTimer(1));
 
 
 

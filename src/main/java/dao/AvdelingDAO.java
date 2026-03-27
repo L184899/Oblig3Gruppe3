@@ -24,4 +24,14 @@ public class AvdelingDAO {
         em.close();
         return liste;
     }
+
+    public String finnSjef(int avdelingId) {
+        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
+
+        Avdeling a = em.find(Avdeling.class, avdelingId);
+
+        String navn = a.getSjef().getFornavn();
+        em.close();
+        return navn;
+    }
 }
