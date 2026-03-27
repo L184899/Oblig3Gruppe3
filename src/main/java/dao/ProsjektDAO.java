@@ -1,24 +1,24 @@
 package dao;
 
-import entity.Ansatt;
+import entity.Prosjekt;
 import jakarta.persistence.*;
 import util.JPAUtil;
 import java.util.List;
 
-public class AnsattDAO {
+public class ProsjektDAO {
 
-    public Ansatt finnAnsattMedId(int id) {
+    public Prosjekt finnProsjektMedId(int id) {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
-        Ansatt a = em.find(Ansatt.class, id);
+        Prosjekt p = em.find(Prosjekt.class, id);
         em.close();
-        return a;
+        return p;
     }
 
-    public List<Ansatt> finnAlle() {
+    public List<Prosjekt> finnAlle() {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
 
-        List<Ansatt> liste =
-                em.createQuery("SELECT a FROM Ansatt a", Ansatt.class)
+        List<Prosjekt> liste =
+                em.createQuery("SELECT p FROM Prosjekt p", Prosjekt.class)
                         .getResultList();
 
         em.close();
