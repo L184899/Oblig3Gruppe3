@@ -52,6 +52,10 @@ public class Main {
 
         System.out.println("\nSjef i avdeling 1:");
         System.out.println(avdelingDAO.finnSjef(1));
+        System.out.println("\nSjef i avdeling 2:");
+        System.out.println(avdelingDAO.finnSjef(2));
+        System.out.println("\nSjef i avdeling 3:");
+        System.out.println(avdelingDAO.finnSjef(3));
 
         // prosjekt test
         System.out.println("\nAlle prosjekter:");
@@ -62,6 +66,10 @@ public class Main {
 
         System.out.println("\nAntall deltakere i prosjekt 1:");
         System.out.println(prosjektDAO.tellDeltakelser(1));
+        System.out.println("\nAntall deltakere i prosjekt 2:");
+        System.out.println(prosjektDAO.tellDeltakelser(2));
+        System.out.println("\nAntall deltakere i prosjekt 3:");
+        System.out.println(prosjektDAO.tellDeltakelser(3));
 
         // deltakelser test
         System.out.println("\nAlle deltakelser:");
@@ -72,6 +80,10 @@ public class Main {
 
         System.out.println("\nTotale timer i prosjekt 1:");
         System.out.println(deltakelseDAO.totalTimer(1));
+        System.out.println("\nTotale timer i prosjekt 2:");
+        System.out.println(deltakelseDAO.totalTimer(2));
+        System.out.println("\nTotale timer i prosjekt 3:");
+        System.out.println(deltakelseDAO.totalTimer(3));
 
 
 
