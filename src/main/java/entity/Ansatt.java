@@ -22,18 +22,18 @@ public class Ansatt {
     private Double maanedslonn;
 
     @ManyToOne
-    @JoinColumn(name = “avdeling_id”, nullable = false)
+    @JoinColumn(name = "avdeling_id", nullable = false)
     private Avdeling avdeling;
 
-    @OneToMany(mappedBy = “Ansatt”)
+    @OneToMany(mappedBy = "ansatt")
     private List<Deltakelse> deltakelser;
 
 
     public Ansatt() {
     }
 
-    public Ansatt(int ansattId, String brukernavn, String fornavn, String etternavn,
-                  LocalDate ansettelsesdato, String stilling, double maanedslonn) {
+    public Ansatt(int ansatt_id, String brukernavn, String fornavn, String etternavn,
+                  LocalDate ansettelse_dato, String stilling, double maanedslonn) {
         this.ansatt_id = ansatt_id;
         this.brukernavn = brukernavn;
         this.fornavn = fornavn;

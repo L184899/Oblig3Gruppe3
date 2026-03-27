@@ -1,29 +1,33 @@
 package main;
 
 import entity.Ansatt;
+import dao.AnsattDAO;
 import jakarta.persistence.EntityManager;
 import util.JPAUtil;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        EntityManager em = null;
 
-        try {
-            em = JPAUtil.getEntityManagerFactory().createEntityManager();
+        AnsattDAO dao = new AnsattDAO();
 
-            Ansatt ansatt = em.find(Ansatt.class, 1); //l
+        // TEST 1
+        Ansatt a = dao.finnAnsattMedId(1);
+        System.out.println("En ansatt:");
+        System.out.println(a);
 
-            if (ansatt != null) {
-                System.out.println(ansatt);
-            } else {
-                System.out.println("Fant ingen ansatt med id 1.");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (em != null) em.close();
-            JPAUtil.close();
+        // TEST 2
+        System.out.println("\nAlle ansatte:");
+        List<Ansatt> liste = dao.finnAlle();
+        for (Ansatt ans : liste) {
+            System.out.println(ans);
         }
+
+        // TEST 3
+        dao.oppdaterLonn(1, 70000);
+
+        System.out.println("\nOppdatert lønn!");
     }
+
 }
