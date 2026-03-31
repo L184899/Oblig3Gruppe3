@@ -1,9 +1,10 @@
 package entity;
 
 import java.math.BigDecimal;
-import java.util.List;
-import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ansatt")
@@ -22,15 +23,15 @@ public class Ansatt {
 
     @Column(name = "ansettelsesdato")
     private LocalDate ansettelsesdato;
+
     private BigDecimal maanedslonn;
 
     @ManyToOne
-    @JoinColumn(name = "avdeling_id", nullable = false)
+    @JoinColumn(name = "avdeling_id")
     private Avdeling avdeling;
 
     @OneToMany(mappedBy = "ansatt")
     private List<Deltakelse> deltakelser;
-
 
     public Ansatt() {
     }
@@ -94,8 +95,28 @@ public class Ansatt {
         this.stilling = stilling;
     }
 
+    public BigDecimal getMaanedslonn() {
+        return maanedslonn;
+    }
+
     public void setMaanedslonn(BigDecimal maanedslonn) {
         this.maanedslonn = maanedslonn;
+    }
+
+    public Avdeling getAvdeling() {
+        return avdeling;
+    }
+
+    public void setAvdeling(Avdeling avdeling) {
+        this.avdeling = avdeling;
+    }
+
+    public List<Deltakelse> getDeltakelser() {
+        return deltakelser;
+    }
+
+    public void setDeltakelser(List<Deltakelse> deltakelser) {
+        this.deltakelser = deltakelser;
     }
 
     @Override

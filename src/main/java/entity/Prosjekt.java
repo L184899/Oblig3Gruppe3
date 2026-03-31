@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -17,13 +18,47 @@ public class Prosjekt {
     @OneToMany(mappedBy = "prosjekt")
     private List<Deltakelse> deltakelser;
 
-    public int getProsjekt_id() { return prosjekt_id; }
-    public void setProsjekt_id(int prosjekt_id) { this.prosjekt_id = prosjekt_id; }
+    public Prosjekt() {
+    }
 
-    public String getNavn() { return navn; }
-    public void setNavn(String navn) { this.navn = navn; }
+    public int getProsjekt_id() {
+        return prosjekt_id;
+    }
 
-    public String getBeskrivelse() { return beskrivelse; }
-    public void setBeskrivelse(String beskrivelse) { this.beskrivelse = beskrivelse; }
+    public void setProsjekt_id(int prosjekt_id) {
+        this.prosjekt_id = prosjekt_id;
+    }
+
+    public String getNavn() {
+        return navn;
+    }
+
+    public void setNavn(String navn) {
+        this.navn = navn;
+    }
+
+    public String getBeskrivelse() {
+        return beskrivelse;
+    }
+
+    public void setBeskrivelse(String beskrivelse) {
+        this.beskrivelse = beskrivelse;
+    }
+
+    public List<Deltakelse> getDeltakelser() {
+        return deltakelser;
+    }
+
+    public void setDeltakelser(List<Deltakelse> deltakelser) {
+        this.deltakelser = deltakelser;
+    }
+
+    @Override
+    public String toString() {
+        return "Prosjekt{" +
+                "prosjekt_id=" + prosjekt_id +
+                ", navn='" + navn + '\'' +
+                ", beskrivelse='" + beskrivelse + '\'' +
+                '}';
+    }
 }
-
