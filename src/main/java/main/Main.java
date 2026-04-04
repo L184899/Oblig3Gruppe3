@@ -15,7 +15,7 @@ import entity.Deltakelse;
 import entity.Prosjekt;
 import jakarta.persistence.EntityManager;
 import util.JPAUtil;
-
+    //fjerne et par valg i prosjektmeny? husk å se på det
 public class Main {
 
     public static void main(String[] args) {
